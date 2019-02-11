@@ -16,8 +16,12 @@
  <p><input type="submit" /></p>
 </form>
 <?
-if(!isset($_POST['massage'])) $_POST['massage'] = 'й';
-echo('Значение текстового поля: ' . strlen(htmlspecialchars($_POST['massage'])));
+if(empty($_POST['massage'])) {
+	echo "Строка пустая!";
+}else{
+	echo('Значение текстового поля: ' . strlen(htmlspecialchars($_POST['massage'])));
+};
+
 
 ?>
 
