@@ -27,11 +27,11 @@
 		// var_dump($len);
 		//echo $len."<br/>";
 		if ($len>5) {
-			 echo $len."<br/>";
+			// echo $len."<br/>";
 			 // var_dump($len);
 			//$value = strtr($value," ","");
 			$value = substr_replace($value,'*',5);
-			echo $value."<br/>";
+			//echo $value."<br/>";
 		};
 		$new_arr[] = $value;
 
@@ -41,30 +41,31 @@
 	//$str = strtr($str," ","_");
 	echo $str."<br/>";
 	echo "Варинт 2:"."<br/>";
-	// $arr = explode(" ", $_POST['massage']);
-	// $new_arr = array();
-	// //$arr = array($_POST['massage']);
-	// foreach ($arr as $key => $value) {
+	$arr = explode(" ", $_POST['massage']);
+	$new_arr = array();
+	//$arr = array($_POST['massage']);
+	foreach ($arr as $key => $value) {
 		
-	// 	// $value = preg_replace('#[^A-Z]+#', '', $value);
-	// 	$len = strlen($value);
-	// 	// var_dump($value);
-	// 	// var_dump($len);
-	// 	//echo $len."<br/>";
-	// 	if ($len>5) {
-	// 		 //echo $len."<br/>";
-	// 		 // var_dump($len);
-	// 		//$value = strtr($value," ","");
-	// 		$value = preg_replace('#^[A-Za-z][A-Za-z0-9_]{2,9}$/#', '*', $value);
-	// 		echo $value."<br/>";
-	// 	};
-	// 	$new_arr[] = $value;
+		// $value = preg_replace('#[^A-Z]+#', '', $value);
+		$len = strlen($value);
+		// var_dump($value);
+		// var_dump($len);
+		//echo $len."<br/>";
+		if ($len>5) {
+			 //echo $len."<br/>";
+			 // var_dump($len);
+			//$value = strtr($value," ","");
+			$a = $len -5;
+			$value = preg_replace('|.{'.$a.'}$|si', '*', $value);
+			//echo $value."<br/>";
+		};
+		$new_arr[] = $value;
 
-	// }				
-	// $str = implode(" ", $new_arr);
+	}				
+	$str = implode(" ", $new_arr);
 	//$str = strtr($str," ","_");
-	echo (preg_replace('/\b(\S{5,})\b/', '*', $_POST['massage']));
-	//echo $str."<br/>";
+	//echo (preg_replace('/\b(\S{5,})\b/', '*', $_POST['massage']));
+	echo $str."<br/>";
 
 ?>
 
