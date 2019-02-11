@@ -20,7 +20,7 @@
  <p><input type="submit" /></p>
 </form>
 <?	
-	echo "Вариант 1"."<br/>";
+		
 	$arr = explode(" ", $_POST['massage']);
 	$new_arr = array();
 	//$arr = array($_POST['massage']);
@@ -39,8 +39,7 @@
 	$str = implode(" ", $new_arr);
 	$str = strtr($str," ","_");
 	echo $str."<br/>";
-	echo "Варинт 2"."<br/>";
-	echo strtr($_POST['massage']," ","_");
+	
 
 ?>
 
