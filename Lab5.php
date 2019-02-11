@@ -55,7 +55,7 @@
 			 //echo $len."<br/>";
 			 // var_dump($len);
 			//$value = strtr($value," ","");
-			$a = $len -5;
+			$a = $len - 5;
 			$value = preg_replace('|.{'.$a.'}$|si', '*', $value);
 			//echo $value."<br/>";
 		};

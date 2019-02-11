@@ -27,7 +27,7 @@
 	foreach ($arr as $key => $value) {
 		$len = mb_strlen($value);
 		//echo $len."<br/>";
-		if ($len==1) {
+		if ($len>1) {
 			//echo $len."<br/>";
 			$value = mb_strtoupper($value);
 			//echo $value."<br/>";

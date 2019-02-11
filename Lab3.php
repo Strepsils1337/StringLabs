@@ -16,17 +16,27 @@
  <p><input type="submit" /></p>
 </form>
 <?	
-	//$i = 0;
-	$arr = explode("\n", $_POST['massage']);
+	
+	
+	// $arr = explode("\n", $_POST['massage']);
 
-	//$arr = array($_POST['massage']);
-	foreach ($arr as $key => $value) {
-
-		echo /*$i*/ $key." " . (ucfirst(mb_strtolower($value))) . "<br/>";
-		//$i +=1;
-	}
+	// //$arr = array($_POST['massage']);
+	// foreach ($arr as $key => $value) {
+		
+	// 	echo /*$i*/ $key." " . (mb_ucfirst(mb_strtolower($value))) . "<br/>";
+	
+	// }
 	//echo('Значение текстового поля: ' .ucwords(mb_strtolower(htmlspecialchars($_POST['massage']))));
+	function mb_ucfirst($string, $enc = 'UTF-8'){
+				  return mb_strtoupper(mb_substr($string, 0, 1, $enc), $enc) . 
+				         mb_substr($string, 1, mb_strlen($string, $enc), $enc);
+ 	};
 
+ 	$arr = explode("\n", $_POST['massage']);
+ 	foreach ($arr as $key => $value) {
+ 		$v = mb_ucfirst($value);
+ 		echo /*$i*/ $key." " . (mb_ucfirst(mb_strtolower($v))) . "<br/>";
+ 	}	
 ?>
 
 
